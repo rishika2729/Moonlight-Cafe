@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MOONLIGHT</title>
+    <script>
+        function validate(e)
+        {
+            console.log(e)
+            var isValid =true;
+            var email = document.getElementById("email");
+            var email1 = /^[A-Z a-z 0-9]+@[a-z]+\.[a-z]{2,3}$/;
+            if(email1.test(email.value))
+            {
+                alert("done");
+            }
+            else{
+                email.style.border="red solid 2px";
+                isValid=false;
+            }
+            var phone = document.getElementById("num");
+            var phone1 = /^[7-9][0-9]{9}$/;
+            if(phone1.test(phone.value))
+            {
+                alert("done");                
+            }
+            else{
+                phone.style.border = "2px solid red";
+                isValid=false;
+            }
+            var password = document.getElementById("password");
+            var password1 = /^[A-Z a-z 0-9 @_$]{7,14}$/;
+            if(password1.test(password.value))
+            {
+                alert("done");
+            }
+            else{
+                password.style.border="red solid 2px";
+                isValid=false;
+            }
+            if(!isValid)
+            {
+                alert("Please Check your Fields")
+                e.preventDefault();
+            }
+        }
+    </script>
+</head>
+<style>
+    form {
+  width: 60vw;
+  max-width: 800px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+body{  
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      background-color: #1b1b32;
+      color: #f5f6f7;
+      font-family: Tahoma;
+      font-size: 16px;  
+    }
+    .navbar{       
+            border-radius: 50px; 
+            background-color: rgb(19, 1, 14);
+    }
+    .navbar ul{
+            overflow: auto;
+    }
+    .navbar li{
+            float: left;
+            list-style: none;
+            margin : 8px 75px;
+            font-size: 40px;
+            font-style: italic;   
+    }
+    .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color : yellow;
+            display : flex;
+            font-size : 25px;
+    }  
+    h1{
+        text-align: center;
+    } 
+</style>
+<body>
+    <div class="d1">
+        <h1>THE MOONLIGHT CAFE</h1>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html"><u>HOME</u></a></li>
+            <li><a href="menu.html"><u>MENU</u></a></li>
+            <li><a href="contact.html"><u>CONTACT</u></a></li>
+            <li><a href="gallery.html"><u>IMAGE GALLERY</u></a></li>
+        </ul>
+    </nav>
+    </div>
+    <center>
+        <fieldset>
+        <form action="backend.php" method="post" onsubmit="validate(event)" >
+            <legend><h2>Contact Form</h2></legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="firstName">First Name : </label>
+                    </td>
+                <td>
+                     <input type="text" id="firstName">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <label for="secondName">Last Name : </label>
+                </td>
+                <td>
+                     <input type="text" id="secondName">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="gender">Gender : </label>
+                </td>
+                <td>
+                  <input type="radio" id="gender" name="gName"> Male   <input type="radio" id="gender" name="gName">Female
+                </td>
+            </tr>
+           
+            <tr>
+                <td>
+                    <label for="city">City : </label>
+                </td>
+                <td>
+                    <input type="text" id="city">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="state">State : </label>
+                </td>
+                <td>
+                    <input type="text" id="state">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="country">Country : </label>
+                </td>
+                <td>
+                    <input type="text" id="country">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="num">Contact Number : </label>
+                </td>
+                <td>
+                    <input type="tel" id="num">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email : </label>
+                </td>
+                <td>
+                    <input type="email" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Password : </label>
+                </td>
+                <td>
+                    <input type="password" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="repass">Re-type Password : </label>
+                </td>
+                <td>
+                    <input type="password" id="repass">
+                </td>
+            </tr>                                               
+            <tr>
+                <td>
+                   <input type="submit">
+                </td>
+                <td>
+                    <input type="reset">
+                </td>
+            </tr>
+</table>
+</form>
+</fieldset>
+</center>
+</body>
+</html>
